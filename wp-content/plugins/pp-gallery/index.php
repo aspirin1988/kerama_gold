@@ -25,7 +25,7 @@ if(isset($_POST['editId'])) {
     echo pp_gallery_edit($_POST['editId']);
 }
 
-function pp_get_breadcrumb ($class='')
+function pp_get_breadcrumb ($class='',$home_url=false)
 {
     $obj=get_queried_object();
     echo "<ul class='{$class}'>";
@@ -35,7 +35,11 @@ function pp_get_breadcrumb ($class='')
             echo '<li><a href="' . get_permalink($obj->ID) . '">' . get_the_title($obj->ID) . '</a></li>';
         } elseif (is_single($obj->ID)) {
             $cat=get_the_category();
-            echo '<li><a href="/">Главная</a></li>';
+            $url='/';
+            if ($home_url){
+                $url=$home_url;
+            }
+            echo "<li><a href='{$url}'>Главная</a></li>";
             foreach ($cat as $value){
                 echo '<li><a href="' . get_term_link($value->term_id) . '">' . $value->name . '</a></li>';
             }

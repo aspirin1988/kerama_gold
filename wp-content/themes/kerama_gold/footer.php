@@ -31,6 +31,8 @@
 <script src="<?php bloginfo('template_directory') ?>/public/js/uikit.min.js"></script>
 <script src="<?php bloginfo('template_directory') ?>/public/js/scripts.js"></script>
 <script src="<?php bloginfo('template_directory') ?>/public/js/3dcarousel.js"></script>
+<script src="<?php bloginfo('template_directory') ?>/public/js/slick.min.js"></script>
+<script src="<?php bloginfo('template_directory') ?>/public/js/components/lightbox.js"></script>
 <script src="https://callback.blink.kz/resources/callback/js/mailer.js" ></script>
 <script>
 	var submitSMG = new BMModule();

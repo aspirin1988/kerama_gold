@@ -75,9 +75,9 @@
 					<h3><a href="#"><?=$value->name?></a></h3>
 					<ul class="uk-nav uk-nav-parent-icon" data-uk-nav="{multiple:true}">
 						<?php foreach ($categories_sub as $value1) :?>
-							<li class="uk-parent uk-open <?php ?>  ">
+							<li class="uk-parent">
 								<a href="#"><?=$value1->name?></a>
-								<ul class="uk-nav-sub uk-open">
+								<ul class="uk-nav-sub">
 									<?php
 									$post=get_posts(array('category_name'=>$value1->slug));
 									foreach ($post as $value2) :
@@ -100,7 +100,7 @@
 			<div class="uk-grid">
 				<div class="uk-width-medium-3-5 big-photo_and_text">
 					<div class="title_and_main">
-						<h4><?=$obj->post_title?></h4>
+						<h4>Керамическая плитка</h4>
 						<img src="<?=get_the_post_thumbnail_url($obj->ID)?>">
 					</div>
 					<p>
@@ -109,17 +109,17 @@
 				</div>
 				<div class="uk-width-medium-2-5">
 					<div class="slick-carousel">
-					<?php	$post=get_posts(array('category_name'=>'сeramic_tile', 'order'=>'rand', 'numberposts'=>7));
-					foreach ($post as $value): if ($value->ID!=$obj->ID):
-					?>
-						<div class="product-item">
-							<a href="<?=get_permalink($value->ID)?>">
-								<img src="<?=get_field('image-1',$value->ID)?>">
+						<?php	$post=get_posts(array('category_name'=>'сeramic_tile', 'order'=>'rand', 'numberposts'=>7));
+						foreach ($post as $value): if ($value->ID!=$obj->ID):
+							?>
+							<div class="product-item">
+								<a href="<?=get_permalink($value->ID)?>">
+									<img src="<?=get_field('image-1',$value->ID)?>">
 								<p><?=get_field('article',$value->ID)?><br>
 									<?=get_field('size',$value->ID)?></p>
-							</a>
-						</div>
-					<?php endif; endforeach;  ?>
+								</a>
+							</div>
+						<?php endif; endforeach;  ?>
 					</div>
 				</div>
 			</div>
@@ -130,15 +130,3 @@
 	</div>
 </div>
 <!-- КОНЕЦ фильтр и окно товара-->
-
-<?php
-function check($current,$current)
-{
-	if ($current==$current)
-	{
-		return true;
-	}
-	return false;
-
-}
-?>

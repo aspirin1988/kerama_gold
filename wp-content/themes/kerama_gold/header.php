@@ -9,6 +9,8 @@
 	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="<?php bloginfo('template_directory') ?>/public/css/uikit.min.css">
 	<link rel="stylesheet" href="<?php bloginfo('template_directory') ?>/public/css/styles.css">
+	<link rel="stylesheet" href="<?php bloginfo('template_directory') ?>/public/css/slick.css">
+	<link rel="stylesheet" href="<?php bloginfo('template_directory') ?>/public/css/components/slidenav.css">
 </head>
 <body>
 <header>
