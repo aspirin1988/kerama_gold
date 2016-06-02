@@ -1032,3 +1032,17 @@
 [Thu Jun 02 15:27:28.700635 2016] [:error] [pid 14416] [client 127.0.0.1:36999] PHP   5. do_action() /home/serg/site/kerama_gold/wp-includes/post.php:3529, referer: http://kerama_gold.tes/wp-admin/post.php?post=13&action=edit
 [Thu Jun 02 15:27:28.700639 2016] [:error] [pid 14416] [client 127.0.0.1:36999] PHP   6. call_user_func_array:{/home/serg/site/kerama_gold/wp-includes/plugin.php:525}() /home/serg/site/kerama_gold/wp-includes/plugin.php:525, referer: http://kerama_gold.tes/wp-admin/post.php?post=13&action=edit
 [Thu Jun 02 15:27:28.700643 2016] [:error] [pid 14416] [client 127.0.0.1:36999] PHP   7. pp_gallery_upload() /home/serg/site/kerama_gold/wp-includes/plugin.php:525, referer: http://kerama_gold.tes/wp-admin/post.php?post=13&action=edit
+[Thu Jun 02 15:52:45.154499 2016] [:error] [pid 15323] [client 127.0.0.1:37314] PHP Fatal error:  Cannot redeclare check() (previously declared in /home/serg/site/kerama_gold/wp-content/themes/kerama_gold/template-parts/content.php:135) in /home/serg/site/kerama_gold/wp-content/themes/kerama_gold/template-parts/content.php on line 135, referer: http://kerama_gold.tes/?s=lorem
+[Thu Jun 02 15:52:45.154543 2016] [:error] [pid 15323] [client 127.0.0.1:37314] PHP Stack trace:, referer: http://kerama_gold.tes/?s=lorem
+[Thu Jun 02 15:52:45.154552 2016] [:error] [pid 15323] [client 127.0.0.1:37314] PHP   1. {main}() /home/serg/site/kerama_gold/index.php:0, referer: http://kerama_gold.tes/?s=lorem
+[Thu Jun 02 15:52:45.154558 2016] [:error] [pid 15323] [client 127.0.0.1:37314] PHP   2. require() /home/serg/site/kerama_gold/index.php:17, referer: http://kerama_gold.tes/?s=lorem
+[Thu Jun 02 15:52:45.154572 2016] [:error] [pid 15323] [client 127.0.0.1:37314] PHP   3. require_once() /home/serg/site/kerama_gold/wp-blog-header.php:19, referer: http://kerama_gold.tes/?s=lorem
+[Thu Jun 02 15:52:45.154576 2016] [:error] [pid 15323] [client 127.0.0.1:37314] PHP   4. include() /home/serg/site/kerama_gold/wp-includes/template-loader.php:75, referer: http://kerama_gold.tes/?s=lorem
+[Thu Jun 02 15:52:45.154581 2016] [:error] [pid 15323] [client 127.0.0.1:37314] PHP   5. get_template_part() /home/serg/site/kerama_gold/wp-content/themes/kerama_gold/archive.php:24, referer: http://kerama_gold.tes/?s=lorem
+[Thu Jun 02 15:52:45.154585 2016] [:error] [pid 15323] [client 127.0.0.1:37314] PHP   6. locate_template() /home/serg/site/kerama_gold/wp-includes/general-template.php:167, referer: http://kerama_gold.tes/?s=lorem
+[Thu Jun 02 15:52:45.154589 2016] [:error] [pid 15323] [client 127.0.0.1:37314] PHP   7. load_template() /home/serg/site/kerama_gold/wp-includes/template.php:531, referer: http://kerama_gold.tes/?s=lorem
+[Thu Jun 02 16:40:13.839607 2016] [:error] [pid 18379] [client 127.0.0.1:37990] PHP Parse error:  syntax error, unexpected 'endif' (T_ENDIF) in /home/serg/site/kerama_gold/wp-content/themes/kerama_gold/404.php on line 49
+[Thu Jun 02 16:40:13.839639 2016] [:error] [pid 18379] [client 127.0.0.1:37990] PHP Stack trace:
+[Thu Jun 02 16:40:13.839648 2016] [:error] [pid 18379] [client 127.0.0.1:37990] PHP   1. {main}() /home/serg/site/kerama_gold/index.php:0
+[Thu Jun 02 16:40:13.839653 2016] [:error] [pid 18379] [client 127.0.0.1:37990] PHP   2. require() /home/serg/site/kerama_gold/index.php:17
+[Thu Jun 02 16:40:13.839658 2016] [:error] [pid 18379] [client 127.0.0.1:37990] PHP   3. require_once() /home/serg/site/kerama_gold/wp-blog-header.php:19

@@ -9,16 +9,20 @@
 
 get_header(); ?>
 
-	<section id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
 
 		<?php
 		if ( have_posts() ) : ?>
 
 			<header class="page-header">
-				<h1 class="page-title"><?php printf( esc_html__( 'Search Results for: %s', 'kerama_gold' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
+				<div class="main-title uk-container uk-container-center">
+					<div>
+						<h1><?php printf( esc_html__( 'Результаты поиска: %s', 'kerama_gold' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
+					</div>
+					<?php pp_get_breadcrumb('uk-breadcrumb uk-float-right') ?>
+				</div>
 			</header><!-- .page-header -->
-
+			<div class="uk-container uk-container-center about on-main ">
+				<div class="uk-grid">
 			<?php
 			/* Start the Loop */
 			while ( have_posts() ) : the_post();
@@ -31,18 +35,13 @@ get_header(); ?>
 				get_template_part( 'template-parts/content', 'search' );
 
 			endwhile;
-
-			the_posts_navigation();
-
 		else :
 
 			get_template_part( 'template-parts/content', 'none' );
 
 		endif; ?>
-
-		</main><!-- #main -->
-	</section><!-- #primary -->
+		</div>
+	</div>
 
 <?php
-get_sidebar();
 get_footer();

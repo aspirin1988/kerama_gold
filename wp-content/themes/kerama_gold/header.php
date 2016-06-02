@@ -16,9 +16,7 @@
 <header>
 	<div class="uk-container uk-container-center">
 		<div class="search-and-phone-numbers">
-			<form action="">
-				<input type="text" placeholder="поиск по сайту"> <button type="submit"><i class="uk-icon-search"></i></button>
-			</form>
+			<?php get_search_form(); ?>
 			<div class="phone-numbers">
 				<img src="<?php bloginfo('template_directory') ?>/public/img/icon-mobile.png" class="uk-hidden-small">
 				<a href="tel:<?=get_field('phone1-a',4)?>"><?=get_field('phone1-a',4)?></a>
