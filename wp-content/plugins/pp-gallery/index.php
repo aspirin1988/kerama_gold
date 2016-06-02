@@ -137,31 +137,33 @@ function pp_gallery_upload() {
 
     global $wpdb;
 
-    foreach($pp_upload_data['images']['error'] as $key => $value) {
-        if($value == 0) {
-            $target_dir = ABSPATH . "/wp-content/uploads/pp_gallery/" . $pp_upload_data['id'] . '/';
-            $target_file = $target_dir . basename($pp_upload_data['images']["name"][$key]);
-            $uploadOk = 1;
+    if($pp_upload_data['images']) {
+        foreach($pp_upload_data['images']['error'] as $key => $value) {
+            if($value == 0) {
+                $target_dir = ABSPATH . "/wp-content/uploads/pp_gallery/" . $pp_upload_data['id'] . '/';
+                $target_file = $target_dir . basename($pp_upload_data['images']["name"][$key]);
+                $uploadOk = 1;
 
-            // Check if $uploadOk is set to 0 by an error
-            if ($uploadOk == 0) {
-                echo "Sorry, your file was not uploaded.";
-                // if everything is ok, try to upload file
-            } else {
-                if (!file_exists($target_dir)) {
-                    mkdir($target_dir, 0777, true);
-                }
-
-                if (move_uploaded_file($pp_upload_data['images']["tmp_name"][$key], $target_file)) {
-                    $name=basename($pp_upload_data['images']["name"][$key]);
-                    $fileUrl = "/wp-content/uploads/pp_gallery/" . $pp_upload_data['id'] . '/' . $name;
-                    $name=explode('.',$name);
-                    $name=$name[0];
-                    $query = "INSERT INTO pp_gallery_data (url, pp_id,name,alt) VALUES ('$fileUrl','{$pp_upload_data['id']}','{$name}','{$name}')";
-                    $wpdb->query($query);
-
+                // Check if $uploadOk is set to 0 by an error
+                if ($uploadOk == 0) {
+                    echo "Sorry, your file was not uploaded.";
+                    // if everything is ok, try to upload file
                 } else {
-                    echo "Sorry, there was an error uploading your file.";
+                    if (!file_exists($target_dir)) {
+                        mkdir($target_dir, 0777, true);
+                    }
+
+                    if (move_uploaded_file($pp_upload_data['images']["tmp_name"][$key], $target_file)) {
+                        $name=basename($pp_upload_data['images']["name"][$key]);
+                        $fileUrl = "/wp-content/uploads/pp_gallery/" . $pp_upload_data['id'] . '/' . $name;
+                        $name=explode('.',$name);
+                        $name=$name[0];
+                        $query = "INSERT INTO pp_gallery_data (url, pp_id,name,alt) VALUES ('$fileUrl','{$pp_upload_data['id']}','{$name}','{$name}')";
+                        $wpdb->query($query);
+
+                    } else {
+                        echo "Sorry, there was an error uploading your file.";
+                    }
                 }
             }
         }
