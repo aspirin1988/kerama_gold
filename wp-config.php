@@ -27,8 +27,6 @@ define('DB_USER', 'keram_db');
 
 /** Пароль к базе данных MySQL */
 define('DB_PASSWORD', 'Xj8r*63f');
-//keram_admin
-//3ETa)1P!i5CTK3&5Hw password
 /** Имя сервера MySQL */
 define('DB_HOST', 'srv-db-plesk14.ps.kz:3306');
 
