@@ -18,9 +18,27 @@
 		</div>
 	</div>
 	<div class="links-to-products-on-main">
-		<a href="#">Керамическая плитка</a>
-		<a href="#">Керамогранит</a>
-		<a href="#">Всё для плитки</a>
+		<?php
+		$args = array(
+			'type'         => 'post',
+			'child_of'     => '',
+			'parent'       => 3,
+			'orderby'      => 'name',
+			'order'        => 'DESC',
+			'hide_empty'   => 1,
+			'hierarchical' => 1,
+			'exclude'      => '',
+			'include'      => '',
+			'number'       => 0,
+			'taxonomy'     => 'category',
+			'pad_counts'   => false,
+			// полный список параметров смотрите в описании функции http://wp-kama.ru/function/get_terms
+		);
+		$categories = get_categories( $args ); 
+		foreach ($categories as $value):
+		?>
+		<a href="<?=get_term_link($value->term_id)?>"><?=$value->cat_name?></a>
+		<?php endforeach; ?>
 	</div>
 </div>
 <!--НАЧАЛО 3d-carousel-->

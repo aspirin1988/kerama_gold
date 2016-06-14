@@ -20,16 +20,17 @@
 
 // ** Параметры MySQL: Эту информацию можно получить у вашего хостинг-провайдера ** //
 /** Имя базы данных для WordPress */
-define('DB_NAME', 'kerama_gold');
+define('DB_NAME', 'keramago_db');
 
 /** Имя пользователя MySQL */
-define('DB_USER', 'kerama_gold');
+define('DB_USER', 'keram_db');
 
 /** Пароль к базе данных MySQL */
-define('DB_PASSWORD', '123456');
+define('DB_PASSWORD', 'Xj8r*63f');
+//keram_admin
 //3ETa)1P!i5CTK3&5Hw password
 /** Имя сервера MySQL */
-define('DB_HOST', 'localhost');
+define('DB_HOST', 'srv-db-plesk14.ps.kz:3306');
 
 /** Кодировка базы данных для создания таблиц. */
 define('DB_CHARSET', 'utf8');
