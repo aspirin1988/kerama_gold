@@ -1,5 +1,8 @@
-<?php $obj=get_queried_object(); ?>
-<!--НАЧАЛО shadow-under-navbar -->
+<?php $obj=get_queried_object();
+$current_category=get_the_category();
+$current_category=$current_category[count($current_category)-1];
+?>
+	<!--НАЧАЛО shadow-under-navbar -->
 <div class="uk-text-center">
 	<img src="<?php bloginfo('template_directory') ?>/public/img/shadow-under-navbar.png" alt="Тень">
 </div>
@@ -45,8 +48,8 @@
 					'type'         => 'post',
 					'child_of'     => $value->term_id,
 					'parent'       => '',
-					'orderby'      => 'name',
-					'order'        => 'DESC',
+					'orderby'      => 'id',
+					'order'        => 'ASC',
 					'hide_empty'   => 1,
 					'hierarchical' => 1,
 					'exclude'      => '',
@@ -75,14 +78,14 @@
 					<h3><a href="#"><?=$value->name?></a></h3>
 					<ul class="uk-nav uk-nav-parent-icon" data-uk-nav="{multiple:true}">
 						<?php foreach ($categories_sub as $value1) :?>
-							<li class="uk-parent uk-open <?php ?>  ">
-								<a href="#"><?=$value1->name?></a>
-								<ul class="uk-nav-sub uk-open">
+							<li class="uk-parent <?php if ($current_category->term_id==$value1->term_id) echo 'uk-active'; ?>  ">
+								<a href="#" data-id="<?=$value1->term_id?>" ><?=$value1->name?></a>
+								<ul class="uk-nav-sub">
 									<?php
 									$post=get_posts(array('category_name'=>$value1->slug));
 									foreach ($post as $value2) :
 										?>
-										<li class=""><a href="<?=get_permalink($value2->ID)?>"><?=$value2->post_title?></a></li>
+										<li class="<?php if ($obj->ID==$value2->ID) echo 'uk-active'; ?>"><a href="<?=get_permalink($value2->ID)?>"><?=$value2->post_title?></a></li>
 									<?php endforeach; ?>
 								</ul>
 							</li>
@@ -109,17 +112,15 @@
 				</div>
 				<div class="uk-width-medium-2-5">
 					<div class="slick-carousel">
-					<?php	$post=get_posts(array('category_name'=>'сeramic_tile', 'order'=>'rand', 'numberposts'=>7));
-					foreach ($post as $value): if ($value->ID!=$obj->ID):
-					?>
-						<div class="product-item">
-							<a href="<?=get_permalink($value->ID)?>">
-								<img src="<?=get_field('image-1',$value->ID)?>">
-								<p><?=get_field('article',$value->ID)?><br>
-									<?=get_field('size',$value->ID)?></p>
-							</a>
-						</div>
-					<?php endif; endforeach;  ?>
+						<?php	$post=pp_gallery_get($obj->ID);
+						foreach ($post as $value):
+							?>
+							<div class="product-item">
+								<img src="<?=$value->url?>">
+								<p><?=$value->alt?><br>
+									<?=$value->description?></p>
+							</div>
+						<?php endforeach;  ?>
 					</div>
 				</div>
 			</div>

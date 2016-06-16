@@ -60,7 +60,7 @@
 		<div class="uk-width-medium-1-2 text-section">
 			<h2>О компании</h2>
 			<p>
-				<?php $about=get_post(7); echo str_replace("\n",'<br><br>',mb_substr(strip_tags($about->post_content),0,512));?>...
+				<?php $about=get_post(7); $about=explode('<!--more-->',$about->post_content); echo $about[0];?>
 			</p>
 			<a class="btn" href="<?=get_permalink(7)?>">Подробнее</a>
 		</div>
@@ -109,7 +109,7 @@
 				<p>
 					<?=get_field('feedback',4)?>
 				</p>
-				<form action="" class="blink-mailer">
+				<form action=""  class="blink-mailer">
 					<input type="hidden" name="title" value="Обратная связь">
 					<div class="inputs">
 						<input type="text" placeholder="Имя" name="Имя">

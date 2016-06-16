@@ -1,0 +1,40 @@
+.blink-mailer{
+    background: transparent;
+}
+
+.blink-mailer input[type="submit"]{
+    float: right;
+    margin: 15px 45px 0 42px;
+    background: #2a4650;
+    color: #fff;
+    width: 150px;
+    height: 30px;
+    border: 3px #2a4650 solid;
+}
+
+.blink-mailer .inputs input{
+    max-width: 80%;
+    border-radius: 2px;
+    border: 2px #000 solid;
+    color: #000;
+    background: transparent;
+}
+
+.blink-mailer .inputs input::-webkit-input-placeholder {color:#000;}
+.blink-mailer .inputs input::-moz-placeholder          {color:#000;}/* Firefox 19+ */
+.blink-mailer .inputs input:-moz-placeholder           {color:#000;}/* Firefox 18- */
+.blink-mailer .inputs input:-ms-input-placeholder      {color:#000;}
+
+.separator-recall{
+    padding: 0 0 0 0;
+    margin: -35px 0 0 20px;
+}
+
+#contacts{
+    margin: -30px !important;
+    padding: 0 !important;
+}
+
+#content{
+    margin-top: -55px;
+}

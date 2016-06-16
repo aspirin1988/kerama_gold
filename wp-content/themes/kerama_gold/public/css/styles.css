@@ -545,6 +545,8 @@ footer {
     background: url(../img/products/filter-background.jpg) content-box; }
     .filter_and_product-summary .filter ul.uk-nav-sub {
       padding: 0; }
+      .filter_and_product-summary .filter ul.uk-nav-sub li.uk-active a {
+        text-decoration: underline; }
     .filter_and_product-summary .filter > ul > li > a {
       font-weight: bold; }
     .filter_and_product-summary .filter > ul li a {

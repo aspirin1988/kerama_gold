@@ -740,6 +740,9 @@ footer {
 
     ul.uk-nav-sub {
       padding: 0;
+      li.uk-active a {
+        text-decoration: underline;
+      }
     }
 
     &>ul>li>a {

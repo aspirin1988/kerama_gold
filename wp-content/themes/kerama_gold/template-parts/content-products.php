@@ -45,8 +45,8 @@
 					'type'         => 'post',
 					'child_of'     => $value->term_id,
 					'parent'       => '',
-					'orderby'      => 'name',
-					'order'        => 'DESC',
+					'orderby'      => 'id',
+					'order'        => 'ASC',
 					'hide_empty'   => 1,
 					'hierarchical' => 1,
 					'exclude'      => '',
@@ -109,17 +109,15 @@
 				</div>
 				<div class="uk-width-medium-2-5">
 					<div class="slick-carousel">
-						<?php	$post=get_posts(array('category_name'=>'сeramic_tile', 'order'=>'rand', 'numberposts'=>7));
-						foreach ($post as $value): if ($value->ID!=$obj->ID):
+						<?php	$post=pp_gallery_get($obj->ID);
+						foreach ($post as $value):
 							?>
 							<div class="product-item">
-								<a href="<?=get_permalink($value->ID)?>">
-									<img src="<?=get_field('image-1',$value->ID)?>">
-								<p><?=get_field('article',$value->ID)?><br>
-									<?=get_field('size',$value->ID)?></p>
-								</a>
+									<img src="<?=$value->url?>">
+								<p><?=$value->alt?><br>
+									<?=$value->description?></p>
 							</div>
-						<?php endif; endforeach;  ?>
+						<?php endforeach;  ?>
 					</div>
 				</div>
 			</div>

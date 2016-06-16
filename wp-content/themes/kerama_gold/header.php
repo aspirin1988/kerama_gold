@@ -26,7 +26,7 @@
 	</div>
 	<nav class="uk-navbar">
 		<div class="uk-container uk-container-center">
-			<a href="index.html" class="logo">
+			<a href="/" class="logo">
 				<img src="<?=get_field('logo',4)?>" alt="Лого">
 			</a>
 			<div class="uk-navbar-flip">
