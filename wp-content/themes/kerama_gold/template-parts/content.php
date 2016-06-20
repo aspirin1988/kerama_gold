@@ -60,7 +60,7 @@ $current_category=$current_category[count($current_category)-1];
 					// полный список параметров смотрите в описании функции http://wp-kama.ru/function/get_terms
 				);
 				$categories_sub = get_categories( $args );
-				$post=get_posts(array('category_name'=>$value->slug));
+				$post=get_posts(array('category_name'=>$value->slug,'numberposts'   => -1,));
 				if (!$categories_sub):
 					if (count($post)>1):?>
 						<h3><a href="<?=get_permalink($post[0]->ID)?>"><?=$value->name?></a></h3>
@@ -82,7 +82,7 @@ $current_category=$current_category[count($current_category)-1];
 								<a href="#" data-id="<?=$value1->term_id?>" ><?=$value1->name?></a>
 								<ul class="uk-nav-sub">
 									<?php
-									$post=get_posts(array('category_name'=>$value1->slug));
+									$post=get_posts(array('category_name'=>$value1->slug,'numberposts'=>-1));
 									foreach ($post as $value2) :
 										?>
 										<li class="<?php if ($obj->ID==$value2->ID) echo 'uk-active'; ?>"><a href="<?=get_permalink($value2->ID)?>"><?=$value2->post_title?></a></li>
