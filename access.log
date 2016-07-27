@@ -9591,3 +9591,5 @@
 127.0.0.1 - - [13/Jun/2016:23:07:58 +0600] "GET /favicon.ico HTTP/1.1" 200 202 "http://kerama_gold.tes/wp-login.php?redirect_to=http%3A%2F%2Fkerama_gold.tes%2Fwp-admin%2F&reauth=1" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.79 Safari/537.36"
 127.0.0.1 - - [14/Jun/2016:16:38:17 +0600] "GET / HTTP/1.1" 500 608 "-" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.79 Safari/537.36"
 127.0.0.1 - - [14/Jun/2016:16:38:17 +0600] "GET /favicon.ico HTTP/1.1" 200 203 "http://kerama_gold.tes/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.79 Safari/537.36"
+127.0.0.1 - - [27/Jul/2016:12:22:13 +0600] "GET / HTTP/1.1" 500 608 "-" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.106 Safari/537.36"
+127.0.0.1 - - [27/Jul/2016:12:22:14 +0600] "GET /favicon.ico HTTP/1.1" 200 203 "http://kerama_gold.tes/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.106 Safari/537.36"

@@ -99,7 +99,6 @@
 	<img src="<?php bloginfo('template_directory') ?>/public/img/shadow-between-sections.png" alt="Тень">
 </div>
 <!--КОНЕЦ shadow-between-sections -->
-
 <!-- НАЧАЛО feedback-on-main -->
 <div class="uk-container uk-container-center feedback-on-main">
 	<div class="uk-grid">
